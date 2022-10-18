@@ -1,7 +1,11 @@
+
 import ReactEChart from "echarts-for-react";
 import "./Barchart.css";
+import Draggable from "react-draggable";
+
 
 const Barchart = () => {
+
   const eChartOptions = {
     legend: {
       // Try 'horizontal'
@@ -10,7 +14,7 @@ const Barchart = () => {
       top: "center",
     },
     title: {
-      text: "ECharts Getting Started Example",
+      text: "Simple Bar chart",
     },
     tooltip: {},
     legend: {
@@ -19,7 +23,9 @@ const Barchart = () => {
     xAxis: {
       data: ["Shirts", "Cardigans", "Chiffons", "Pants", "Heels", "Socks"],
     },
-    yAxis: {},
+    yAxis: {
+      type:"value"
+    },
     series: [
       {
         name: "sales",
@@ -29,9 +35,16 @@ const Barchart = () => {
       },
     ],
   };
+
+ 
   return (
-    <div className="barchart_container">
-      <ReactEChart option={eChartOptions} />
+    <div className="parent">
+    <Draggable axis="x" handle="#handle">
+        <div  className="barchart_container">
+          <span className="drag" id="handle">For Drag</span>
+          <ReactEChart option={eChartOptions} />
+        </div>
+    </Draggable>
     </div>
   );
 };

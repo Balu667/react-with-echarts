@@ -2,7 +2,28 @@
   box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.1);
   height: 300px;
   width: 800px;
+  max-width: 100vw;
   margin: 50px auto;
   border-radius: 5px;
   padding: 20px 0;
+  overflow: hidden;
+  resize: both;
+  position: relative;
+}
+.drag{
+  cursor: pointer;
+  display: flex;
+  justify-content: end;
+  margin-right: 20px;
+  background-color: black;
+  color: #fff;
+  width: max-content;
+  position: absolute;
+  right: 5%;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.echarts-for-react{
+  height: 100% !important;
 }
