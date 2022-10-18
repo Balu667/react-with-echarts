@@ -39,7 +39,7 @@ const Barchart = () => {
  
   return (
     <div className="parent">
-    <Draggable axis="x" handle="#handle">
+    <Draggable bounds="parent" axis="x" handle="#handle">
         <div  className="barchart_container">
           <span className="drag" id="handle">For Drag</span>
           <ReactEChart option={eChartOptions} />
